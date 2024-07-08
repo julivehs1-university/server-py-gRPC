@@ -1,0 +1,18 @@
+service Tracker {
+  rpc GetPosition (Robot) returns (Position) {}
+  rpc GetAllRobots () returns (RobotList) {}
+}
+
+message Robot{
+    int32 tag_id = 1; 
+}
+
+message RobotList{
+    repeated Robot robots = 1;
+}
+
+message Position{
+    float x = 1;
+    float y = 2;
+    float orientation = 3;
+}

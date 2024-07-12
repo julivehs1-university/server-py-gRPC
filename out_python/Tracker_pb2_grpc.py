@@ -3,7 +3,7 @@
 import grpc
 import warnings
 
-import Tracker_pb2 as Tracker__pb2
+from . import Tracker_pb2 as Tracker__pb2
 
 GRPC_GENERATED_VERSION = '1.64.1'
 GRPC_VERSION = grpc.__version__
@@ -40,12 +40,12 @@ class TrackerStub(object):
             channel: A grpc.Channel.
         """
         self.GetPosition = channel.unary_unary(
-                '/Tracker/GetPosition',
+                '/real.grpc.Tracker/GetPosition',
                 request_serializer=Tracker__pb2.Robot.SerializeToString,
                 response_deserializer=Tracker__pb2.Position.FromString,
                 _registered_method=True)
         self.GetAllRobots = channel.unary_unary(
-                '/Tracker/GetAllRobots',
+                '/real.grpc.Tracker/GetAllRobots',
                 request_serializer=Tracker__pb2.Empty.SerializeToString,
                 response_deserializer=Tracker__pb2.RobotList.FromString,
                 _registered_method=True)
@@ -81,9 +81,9 @@ def add_TrackerServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'Tracker', rpc_method_handlers)
+            'real.grpc.Tracker', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
-    server.add_registered_method_handlers('Tracker', rpc_method_handlers)
+    server.add_registered_method_handlers('real.grpc.Tracker', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
@@ -104,7 +104,7 @@ class Tracker(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/Tracker/GetPosition',
+            '/real.grpc.Tracker/GetPosition',
             Tracker__pb2.Robot.SerializeToString,
             Tracker__pb2.Position.FromString,
             options,
@@ -131,7 +131,7 @@ class Tracker(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/Tracker/GetAllRobots',
+            '/real.grpc.Tracker/GetAllRobots',
             Tracker__pb2.Empty.SerializeToString,
             Tracker__pb2.RobotList.FromString,
             options,

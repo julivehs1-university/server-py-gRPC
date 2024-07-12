@@ -14,21 +14,22 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\rTracker.proto\"\x07\n\x05\x45mpty\"\x19\n\x05Robot\x12\x10\n\x08robot_id\x18\x01 \x02(\x05\"#\n\tRobotList\x12\x16\n\x06robots\x18\x01 \x03(\x0b\x32\x06.Robot\"5\n\x08Position\x12\t\n\x01x\x18\x01 \x02(\x02\x12\t\n\x01y\x18\x02 \x02(\x02\x12\x13\n\x0borientation\x18\x03 \x02(\x02\x32S\n\x07Tracker\x12\"\n\x0bGetPosition\x12\x06.Robot\x1a\t.Position\"\x00\x12$\n\x0cGetAllRobots\x12\x06.Empty\x1a\n.RobotList\"\x00')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\rTracker.proto\x12\treal.grpc\"\x07\n\x05\x45mpty\"\x19\n\x05Robot\x12\x10\n\x08robot_id\x18\x01 \x01(\x05\"-\n\tRobotList\x12 \n\x06robots\x18\x01 \x03(\x0b\x32\x10.real.grpc.Robot\"5\n\x08Position\x12\t\n\x01x\x18\x01 \x01(\x02\x12\t\n\x01y\x18\x02 \x01(\x02\x12\x13\n\x0borientation\x18\x03 \x01(\x02\x32{\n\x07Tracker\x12\x36\n\x0bGetPosition\x12\x10.real.grpc.Robot\x1a\x13.real.grpc.Position\"\x00\x12\x38\n\x0cGetAllRobots\x12\x10.real.grpc.Empty\x1a\x14.real.grpc.RobotList\"\x00\x42\x02P\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'Tracker_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
-  DESCRIPTOR._loaded_options = None
-  _globals['_EMPTY']._serialized_start=17
-  _globals['_EMPTY']._serialized_end=24
-  _globals['_ROBOT']._serialized_start=26
-  _globals['_ROBOT']._serialized_end=51
-  _globals['_ROBOTLIST']._serialized_start=53
-  _globals['_ROBOTLIST']._serialized_end=88
-  _globals['_POSITION']._serialized_start=90
-  _globals['_POSITION']._serialized_end=143
-  _globals['_TRACKER']._serialized_start=145
-  _globals['_TRACKER']._serialized_end=228
+  _globals['DESCRIPTOR']._loaded_options = None
+  _globals['DESCRIPTOR']._serialized_options = b'P\001'
+  _globals['_EMPTY']._serialized_start=28
+  _globals['_EMPTY']._serialized_end=35
+  _globals['_ROBOT']._serialized_start=37
+  _globals['_ROBOT']._serialized_end=62
+  _globals['_ROBOTLIST']._serialized_start=64
+  _globals['_ROBOTLIST']._serialized_end=109
+  _globals['_POSITION']._serialized_start=111
+  _globals['_POSITION']._serialized_end=164
+  _globals['_TRACKER']._serialized_start=166
+  _globals['_TRACKER']._serialized_end=289
 # @@protoc_insertion_point(module_scope)

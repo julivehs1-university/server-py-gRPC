@@ -1,0 +1,4 @@
+python -m grpc_tools.protoc --python_out=./out_python --pyi_out=./out_python --grpc_python_out=./out_python -I . .\Tracker.proto
+
+
+ protoc --plugin=protoc-gen-grpc-java=protoc-gen-grpc-java.exe -I . --java_out=out_java --grpc-java_out=out_java .\Tracker.proto

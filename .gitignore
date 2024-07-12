@@ -2,3 +2,7 @@
 __pycache__/
 .idea/
 .vscode/
+
+out_python
+out_java
+protoc-gen-grpc-java

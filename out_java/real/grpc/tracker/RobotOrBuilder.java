@@ -2,10 +2,10 @@
 // source: Tracker.proto
 
 // Protobuf Java Version: 3.25.1
-package real.grpc;
+package real.grpc.tracker;
 
 public interface RobotOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:real.grpc.Robot)
+    // @@protoc_insertion_point(interface_extends:real.grpc.tracker.Robot)
     com.google.protobuf.MessageOrBuilder {
 
   /**

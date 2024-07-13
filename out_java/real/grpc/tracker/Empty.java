@@ -2,14 +2,14 @@
 // source: Tracker.proto
 
 // Protobuf Java Version: 3.25.1
-package real.grpc;
+package real.grpc.tracker;
 
 /**
- * Protobuf type {@code real.grpc.Empty}
+ * Protobuf type {@code real.grpc.tracker.Empty}
  */
 public final class Empty extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:real.grpc.Empty)
+    // @@protoc_insertion_point(message_implements:real.grpc.tracker.Empty)
     EmptyOrBuilder {
 private static final long serialVersionUID = 0L;
   // Use Empty.newBuilder() to construct.
@@ -28,15 +28,15 @@ private static final long serialVersionUID = 0L;
 
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return real.grpc.TrackerOuterClass.internal_static_real_grpc_Empty_descriptor;
+    return real.grpc.tracker.TrackerOuterClass.internal_static_real_grpc_tracker_Empty_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return real.grpc.TrackerOuterClass.internal_static_real_grpc_Empty_fieldAccessorTable
+    return real.grpc.tracker.TrackerOuterClass.internal_static_real_grpc_tracker_Empty_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            real.grpc.Empty.class, real.grpc.Empty.Builder.class);
+            real.grpc.tracker.Empty.class, real.grpc.tracker.Empty.Builder.class);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -72,10 +72,10 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof real.grpc.Empty)) {
+    if (!(obj instanceof real.grpc.tracker.Empty)) {
       return super.equals(obj);
     }
-    real.grpc.Empty other = (real.grpc.Empty) obj;
+    real.grpc.tracker.Empty other = (real.grpc.tracker.Empty) obj;
 
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -93,44 +93,44 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static real.grpc.Empty parseFrom(
+  public static real.grpc.tracker.Empty parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static real.grpc.Empty parseFrom(
+  public static real.grpc.tracker.Empty parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static real.grpc.Empty parseFrom(
+  public static real.grpc.tracker.Empty parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static real.grpc.Empty parseFrom(
+  public static real.grpc.tracker.Empty parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static real.grpc.Empty parseFrom(byte[] data)
+  public static real.grpc.tracker.Empty parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static real.grpc.Empty parseFrom(
+  public static real.grpc.tracker.Empty parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static real.grpc.Empty parseFrom(java.io.InputStream input)
+  public static real.grpc.tracker.Empty parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static real.grpc.Empty parseFrom(
+  public static real.grpc.tracker.Empty parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -138,26 +138,26 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  public static real.grpc.Empty parseDelimitedFrom(java.io.InputStream input)
+  public static real.grpc.tracker.Empty parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static real.grpc.Empty parseDelimitedFrom(
+  public static real.grpc.tracker.Empty parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static real.grpc.Empty parseFrom(
+  public static real.grpc.tracker.Empty parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static real.grpc.Empty parseFrom(
+  public static real.grpc.tracker.Empty parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -170,7 +170,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(real.grpc.Empty prototype) {
+  public static Builder newBuilder(real.grpc.tracker.Empty prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -186,26 +186,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code real.grpc.Empty}
+   * Protobuf type {@code real.grpc.tracker.Empty}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:real.grpc.Empty)
-      real.grpc.EmptyOrBuilder {
+      // @@protoc_insertion_point(builder_implements:real.grpc.tracker.Empty)
+      real.grpc.tracker.EmptyOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return real.grpc.TrackerOuterClass.internal_static_real_grpc_Empty_descriptor;
+      return real.grpc.tracker.TrackerOuterClass.internal_static_real_grpc_tracker_Empty_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return real.grpc.TrackerOuterClass.internal_static_real_grpc_Empty_fieldAccessorTable
+      return real.grpc.tracker.TrackerOuterClass.internal_static_real_grpc_tracker_Empty_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              real.grpc.Empty.class, real.grpc.Empty.Builder.class);
+              real.grpc.tracker.Empty.class, real.grpc.tracker.Empty.Builder.class);
     }
 
-    // Construct using real.grpc.Empty.newBuilder()
+    // Construct using real.grpc.tracker.Empty.newBuilder()
     private Builder() {
 
     }
@@ -224,17 +224,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return real.grpc.TrackerOuterClass.internal_static_real_grpc_Empty_descriptor;
+      return real.grpc.tracker.TrackerOuterClass.internal_static_real_grpc_tracker_Empty_descriptor;
     }
 
     @java.lang.Override
-    public real.grpc.Empty getDefaultInstanceForType() {
-      return real.grpc.Empty.getDefaultInstance();
+    public real.grpc.tracker.Empty getDefaultInstanceForType() {
+      return real.grpc.tracker.Empty.getDefaultInstance();
     }
 
     @java.lang.Override
-    public real.grpc.Empty build() {
-      real.grpc.Empty result = buildPartial();
+    public real.grpc.tracker.Empty build() {
+      real.grpc.tracker.Empty result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -242,8 +242,8 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public real.grpc.Empty buildPartial() {
-      real.grpc.Empty result = new real.grpc.Empty(this);
+    public real.grpc.tracker.Empty buildPartial() {
+      real.grpc.tracker.Empty result = new real.grpc.tracker.Empty(this);
       onBuilt();
       return result;
     }
@@ -282,16 +282,16 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof real.grpc.Empty) {
-        return mergeFrom((real.grpc.Empty)other);
+      if (other instanceof real.grpc.tracker.Empty) {
+        return mergeFrom((real.grpc.tracker.Empty)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(real.grpc.Empty other) {
-      if (other == real.grpc.Empty.getDefaultInstance()) return this;
+    public Builder mergeFrom(real.grpc.tracker.Empty other) {
+      if (other == real.grpc.tracker.Empty.getDefaultInstance()) return this;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -346,16 +346,16 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:real.grpc.Empty)
+    // @@protoc_insertion_point(builder_scope:real.grpc.tracker.Empty)
   }
 
-  // @@protoc_insertion_point(class_scope:real.grpc.Empty)
-  private static final real.grpc.Empty DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:real.grpc.tracker.Empty)
+  private static final real.grpc.tracker.Empty DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new real.grpc.Empty();
+    DEFAULT_INSTANCE = new real.grpc.tracker.Empty();
   }
 
-  public static real.grpc.Empty getDefaultInstance() {
+  public static real.grpc.tracker.Empty getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
@@ -391,7 +391,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public real.grpc.Empty getDefaultInstanceForType() {
+  public real.grpc.tracker.Empty getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

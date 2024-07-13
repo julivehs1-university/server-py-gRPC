@@ -2,14 +2,14 @@
 // source: Tracker.proto
 
 // Protobuf Java Version: 3.25.1
-package real.grpc;
+package real.grpc.tracker;
 
 /**
- * Protobuf type {@code real.grpc.RobotList}
+ * Protobuf type {@code real.grpc.tracker.RobotList}
  */
 public final class RobotList extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:real.grpc.RobotList)
+    // @@protoc_insertion_point(message_implements:real.grpc.tracker.RobotList)
     RobotListOrBuilder {
 private static final long serialVersionUID = 0L;
   // Use RobotList.newBuilder() to construct.
@@ -29,54 +29,54 @@ private static final long serialVersionUID = 0L;
 
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return real.grpc.TrackerOuterClass.internal_static_real_grpc_RobotList_descriptor;
+    return real.grpc.tracker.TrackerOuterClass.internal_static_real_grpc_tracker_RobotList_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return real.grpc.TrackerOuterClass.internal_static_real_grpc_RobotList_fieldAccessorTable
+    return real.grpc.tracker.TrackerOuterClass.internal_static_real_grpc_tracker_RobotList_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            real.grpc.RobotList.class, real.grpc.RobotList.Builder.class);
+            real.grpc.tracker.RobotList.class, real.grpc.tracker.RobotList.Builder.class);
   }
 
   public static final int ROBOTS_FIELD_NUMBER = 1;
   @SuppressWarnings("serial")
-  private java.util.List<real.grpc.Robot> robots_;
+  private java.util.List<real.grpc.tracker.Robot> robots_;
   /**
-   * <code>repeated .real.grpc.Robot robots = 1;</code>
+   * <code>repeated .real.grpc.tracker.Robot robots = 1;</code>
    */
   @java.lang.Override
-  public java.util.List<real.grpc.Robot> getRobotsList() {
+  public java.util.List<real.grpc.tracker.Robot> getRobotsList() {
     return robots_;
   }
   /**
-   * <code>repeated .real.grpc.Robot robots = 1;</code>
+   * <code>repeated .real.grpc.tracker.Robot robots = 1;</code>
    */
   @java.lang.Override
-  public java.util.List<? extends real.grpc.RobotOrBuilder> 
+  public java.util.List<? extends real.grpc.tracker.RobotOrBuilder> 
       getRobotsOrBuilderList() {
     return robots_;
   }
   /**
-   * <code>repeated .real.grpc.Robot robots = 1;</code>
+   * <code>repeated .real.grpc.tracker.Robot robots = 1;</code>
    */
   @java.lang.Override
   public int getRobotsCount() {
     return robots_.size();
   }
   /**
-   * <code>repeated .real.grpc.Robot robots = 1;</code>
+   * <code>repeated .real.grpc.tracker.Robot robots = 1;</code>
    */
   @java.lang.Override
-  public real.grpc.Robot getRobots(int index) {
+  public real.grpc.tracker.Robot getRobots(int index) {
     return robots_.get(index);
   }
   /**
-   * <code>repeated .real.grpc.Robot robots = 1;</code>
+   * <code>repeated .real.grpc.tracker.Robot robots = 1;</code>
    */
   @java.lang.Override
-  public real.grpc.RobotOrBuilder getRobotsOrBuilder(
+  public real.grpc.tracker.RobotOrBuilder getRobotsOrBuilder(
       int index) {
     return robots_.get(index);
   }
@@ -121,10 +121,10 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof real.grpc.RobotList)) {
+    if (!(obj instanceof real.grpc.tracker.RobotList)) {
       return super.equals(obj);
     }
-    real.grpc.RobotList other = (real.grpc.RobotList) obj;
+    real.grpc.tracker.RobotList other = (real.grpc.tracker.RobotList) obj;
 
     if (!getRobotsList()
         .equals(other.getRobotsList())) return false;
@@ -148,44 +148,44 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static real.grpc.RobotList parseFrom(
+  public static real.grpc.tracker.RobotList parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static real.grpc.RobotList parseFrom(
+  public static real.grpc.tracker.RobotList parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static real.grpc.RobotList parseFrom(
+  public static real.grpc.tracker.RobotList parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static real.grpc.RobotList parseFrom(
+  public static real.grpc.tracker.RobotList parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static real.grpc.RobotList parseFrom(byte[] data)
+  public static real.grpc.tracker.RobotList parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static real.grpc.RobotList parseFrom(
+  public static real.grpc.tracker.RobotList parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static real.grpc.RobotList parseFrom(java.io.InputStream input)
+  public static real.grpc.tracker.RobotList parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static real.grpc.RobotList parseFrom(
+  public static real.grpc.tracker.RobotList parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -193,26 +193,26 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  public static real.grpc.RobotList parseDelimitedFrom(java.io.InputStream input)
+  public static real.grpc.tracker.RobotList parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static real.grpc.RobotList parseDelimitedFrom(
+  public static real.grpc.tracker.RobotList parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static real.grpc.RobotList parseFrom(
+  public static real.grpc.tracker.RobotList parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static real.grpc.RobotList parseFrom(
+  public static real.grpc.tracker.RobotList parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -225,7 +225,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(real.grpc.RobotList prototype) {
+  public static Builder newBuilder(real.grpc.tracker.RobotList prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -241,26 +241,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code real.grpc.RobotList}
+   * Protobuf type {@code real.grpc.tracker.RobotList}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:real.grpc.RobotList)
-      real.grpc.RobotListOrBuilder {
+      // @@protoc_insertion_point(builder_implements:real.grpc.tracker.RobotList)
+      real.grpc.tracker.RobotListOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return real.grpc.TrackerOuterClass.internal_static_real_grpc_RobotList_descriptor;
+      return real.grpc.tracker.TrackerOuterClass.internal_static_real_grpc_tracker_RobotList_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return real.grpc.TrackerOuterClass.internal_static_real_grpc_RobotList_fieldAccessorTable
+      return real.grpc.tracker.TrackerOuterClass.internal_static_real_grpc_tracker_RobotList_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              real.grpc.RobotList.class, real.grpc.RobotList.Builder.class);
+              real.grpc.tracker.RobotList.class, real.grpc.tracker.RobotList.Builder.class);
     }
 
-    // Construct using real.grpc.RobotList.newBuilder()
+    // Construct using real.grpc.tracker.RobotList.newBuilder()
     private Builder() {
 
     }
@@ -287,17 +287,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return real.grpc.TrackerOuterClass.internal_static_real_grpc_RobotList_descriptor;
+      return real.grpc.tracker.TrackerOuterClass.internal_static_real_grpc_tracker_RobotList_descriptor;
     }
 
     @java.lang.Override
-    public real.grpc.RobotList getDefaultInstanceForType() {
-      return real.grpc.RobotList.getDefaultInstance();
+    public real.grpc.tracker.RobotList getDefaultInstanceForType() {
+      return real.grpc.tracker.RobotList.getDefaultInstance();
     }
 
     @java.lang.Override
-    public real.grpc.RobotList build() {
-      real.grpc.RobotList result = buildPartial();
+    public real.grpc.tracker.RobotList build() {
+      real.grpc.tracker.RobotList result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -305,15 +305,15 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public real.grpc.RobotList buildPartial() {
-      real.grpc.RobotList result = new real.grpc.RobotList(this);
+    public real.grpc.tracker.RobotList buildPartial() {
+      real.grpc.tracker.RobotList result = new real.grpc.tracker.RobotList(this);
       buildPartialRepeatedFields(result);
       if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
     }
 
-    private void buildPartialRepeatedFields(real.grpc.RobotList result) {
+    private void buildPartialRepeatedFields(real.grpc.tracker.RobotList result) {
       if (robotsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           robots_ = java.util.Collections.unmodifiableList(robots_);
@@ -325,7 +325,7 @@ private static final long serialVersionUID = 0L;
       }
     }
 
-    private void buildPartial0(real.grpc.RobotList result) {
+    private void buildPartial0(real.grpc.tracker.RobotList result) {
       int from_bitField0_ = bitField0_;
     }
 
@@ -363,16 +363,16 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof real.grpc.RobotList) {
-        return mergeFrom((real.grpc.RobotList)other);
+      if (other instanceof real.grpc.tracker.RobotList) {
+        return mergeFrom((real.grpc.tracker.RobotList)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(real.grpc.RobotList other) {
-      if (other == real.grpc.RobotList.getDefaultInstance()) return this;
+    public Builder mergeFrom(real.grpc.tracker.RobotList other) {
+      if (other == real.grpc.tracker.RobotList.getDefaultInstance()) return this;
       if (robotsBuilder_ == null) {
         if (!other.robots_.isEmpty()) {
           if (robots_.isEmpty()) {
@@ -426,9 +426,9 @@ private static final long serialVersionUID = 0L;
               done = true;
               break;
             case 10: {
-              real.grpc.Robot m =
+              real.grpc.tracker.Robot m =
                   input.readMessage(
-                      real.grpc.Robot.parser(),
+                      real.grpc.tracker.Robot.parser(),
                       extensionRegistry);
               if (robotsBuilder_ == null) {
                 ensureRobotsIsMutable();
@@ -455,22 +455,22 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private java.util.List<real.grpc.Robot> robots_ =
+    private java.util.List<real.grpc.tracker.Robot> robots_ =
       java.util.Collections.emptyList();
     private void ensureRobotsIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
-        robots_ = new java.util.ArrayList<real.grpc.Robot>(robots_);
+        robots_ = new java.util.ArrayList<real.grpc.tracker.Robot>(robots_);
         bitField0_ |= 0x00000001;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        real.grpc.Robot, real.grpc.Robot.Builder, real.grpc.RobotOrBuilder> robotsBuilder_;
+        real.grpc.tracker.Robot, real.grpc.tracker.Robot.Builder, real.grpc.tracker.RobotOrBuilder> robotsBuilder_;
 
     /**
-     * <code>repeated .real.grpc.Robot robots = 1;</code>
+     * <code>repeated .real.grpc.tracker.Robot robots = 1;</code>
      */
-    public java.util.List<real.grpc.Robot> getRobotsList() {
+    public java.util.List<real.grpc.tracker.Robot> getRobotsList() {
       if (robotsBuilder_ == null) {
         return java.util.Collections.unmodifiableList(robots_);
       } else {
@@ -478,7 +478,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .real.grpc.Robot robots = 1;</code>
+     * <code>repeated .real.grpc.tracker.Robot robots = 1;</code>
      */
     public int getRobotsCount() {
       if (robotsBuilder_ == null) {
@@ -488,9 +488,9 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .real.grpc.Robot robots = 1;</code>
+     * <code>repeated .real.grpc.tracker.Robot robots = 1;</code>
      */
-    public real.grpc.Robot getRobots(int index) {
+    public real.grpc.tracker.Robot getRobots(int index) {
       if (robotsBuilder_ == null) {
         return robots_.get(index);
       } else {
@@ -498,10 +498,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .real.grpc.Robot robots = 1;</code>
+     * <code>repeated .real.grpc.tracker.Robot robots = 1;</code>
      */
     public Builder setRobots(
-        int index, real.grpc.Robot value) {
+        int index, real.grpc.tracker.Robot value) {
       if (robotsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -515,10 +515,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .real.grpc.Robot robots = 1;</code>
+     * <code>repeated .real.grpc.tracker.Robot robots = 1;</code>
      */
     public Builder setRobots(
-        int index, real.grpc.Robot.Builder builderForValue) {
+        int index, real.grpc.tracker.Robot.Builder builderForValue) {
       if (robotsBuilder_ == null) {
         ensureRobotsIsMutable();
         robots_.set(index, builderForValue.build());
@@ -529,9 +529,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .real.grpc.Robot robots = 1;</code>
+     * <code>repeated .real.grpc.tracker.Robot robots = 1;</code>
      */
-    public Builder addRobots(real.grpc.Robot value) {
+    public Builder addRobots(real.grpc.tracker.Robot value) {
       if (robotsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -545,10 +545,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .real.grpc.Robot robots = 1;</code>
+     * <code>repeated .real.grpc.tracker.Robot robots = 1;</code>
      */
     public Builder addRobots(
-        int index, real.grpc.Robot value) {
+        int index, real.grpc.tracker.Robot value) {
       if (robotsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -562,10 +562,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .real.grpc.Robot robots = 1;</code>
+     * <code>repeated .real.grpc.tracker.Robot robots = 1;</code>
      */
     public Builder addRobots(
-        real.grpc.Robot.Builder builderForValue) {
+        real.grpc.tracker.Robot.Builder builderForValue) {
       if (robotsBuilder_ == null) {
         ensureRobotsIsMutable();
         robots_.add(builderForValue.build());
@@ -576,10 +576,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .real.grpc.Robot robots = 1;</code>
+     * <code>repeated .real.grpc.tracker.Robot robots = 1;</code>
      */
     public Builder addRobots(
-        int index, real.grpc.Robot.Builder builderForValue) {
+        int index, real.grpc.tracker.Robot.Builder builderForValue) {
       if (robotsBuilder_ == null) {
         ensureRobotsIsMutable();
         robots_.add(index, builderForValue.build());
@@ -590,10 +590,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .real.grpc.Robot robots = 1;</code>
+     * <code>repeated .real.grpc.tracker.Robot robots = 1;</code>
      */
     public Builder addAllRobots(
-        java.lang.Iterable<? extends real.grpc.Robot> values) {
+        java.lang.Iterable<? extends real.grpc.tracker.Robot> values) {
       if (robotsBuilder_ == null) {
         ensureRobotsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -605,7 +605,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .real.grpc.Robot robots = 1;</code>
+     * <code>repeated .real.grpc.tracker.Robot robots = 1;</code>
      */
     public Builder clearRobots() {
       if (robotsBuilder_ == null) {
@@ -618,7 +618,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .real.grpc.Robot robots = 1;</code>
+     * <code>repeated .real.grpc.tracker.Robot robots = 1;</code>
      */
     public Builder removeRobots(int index) {
       if (robotsBuilder_ == null) {
@@ -631,16 +631,16 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .real.grpc.Robot robots = 1;</code>
+     * <code>repeated .real.grpc.tracker.Robot robots = 1;</code>
      */
-    public real.grpc.Robot.Builder getRobotsBuilder(
+    public real.grpc.tracker.Robot.Builder getRobotsBuilder(
         int index) {
       return getRobotsFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .real.grpc.Robot robots = 1;</code>
+     * <code>repeated .real.grpc.tracker.Robot robots = 1;</code>
      */
-    public real.grpc.RobotOrBuilder getRobotsOrBuilder(
+    public real.grpc.tracker.RobotOrBuilder getRobotsOrBuilder(
         int index) {
       if (robotsBuilder_ == null) {
         return robots_.get(index);  } else {
@@ -648,9 +648,9 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .real.grpc.Robot robots = 1;</code>
+     * <code>repeated .real.grpc.tracker.Robot robots = 1;</code>
      */
-    public java.util.List<? extends real.grpc.RobotOrBuilder> 
+    public java.util.List<? extends real.grpc.tracker.RobotOrBuilder> 
          getRobotsOrBuilderList() {
       if (robotsBuilder_ != null) {
         return robotsBuilder_.getMessageOrBuilderList();
@@ -659,33 +659,33 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .real.grpc.Robot robots = 1;</code>
+     * <code>repeated .real.grpc.tracker.Robot robots = 1;</code>
      */
-    public real.grpc.Robot.Builder addRobotsBuilder() {
+    public real.grpc.tracker.Robot.Builder addRobotsBuilder() {
       return getRobotsFieldBuilder().addBuilder(
-          real.grpc.Robot.getDefaultInstance());
+          real.grpc.tracker.Robot.getDefaultInstance());
     }
     /**
-     * <code>repeated .real.grpc.Robot robots = 1;</code>
+     * <code>repeated .real.grpc.tracker.Robot robots = 1;</code>
      */
-    public real.grpc.Robot.Builder addRobotsBuilder(
+    public real.grpc.tracker.Robot.Builder addRobotsBuilder(
         int index) {
       return getRobotsFieldBuilder().addBuilder(
-          index, real.grpc.Robot.getDefaultInstance());
+          index, real.grpc.tracker.Robot.getDefaultInstance());
     }
     /**
-     * <code>repeated .real.grpc.Robot robots = 1;</code>
+     * <code>repeated .real.grpc.tracker.Robot robots = 1;</code>
      */
-    public java.util.List<real.grpc.Robot.Builder> 
+    public java.util.List<real.grpc.tracker.Robot.Builder> 
          getRobotsBuilderList() {
       return getRobotsFieldBuilder().getBuilderList();
     }
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        real.grpc.Robot, real.grpc.Robot.Builder, real.grpc.RobotOrBuilder> 
+        real.grpc.tracker.Robot, real.grpc.tracker.Robot.Builder, real.grpc.tracker.RobotOrBuilder> 
         getRobotsFieldBuilder() {
       if (robotsBuilder_ == null) {
         robotsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            real.grpc.Robot, real.grpc.Robot.Builder, real.grpc.RobotOrBuilder>(
+            real.grpc.tracker.Robot, real.grpc.tracker.Robot.Builder, real.grpc.tracker.RobotOrBuilder>(
                 robots_,
                 ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
@@ -707,16 +707,16 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:real.grpc.RobotList)
+    // @@protoc_insertion_point(builder_scope:real.grpc.tracker.RobotList)
   }
 
-  // @@protoc_insertion_point(class_scope:real.grpc.RobotList)
-  private static final real.grpc.RobotList DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:real.grpc.tracker.RobotList)
+  private static final real.grpc.tracker.RobotList DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new real.grpc.RobotList();
+    DEFAULT_INSTANCE = new real.grpc.tracker.RobotList();
   }
 
-  public static real.grpc.RobotList getDefaultInstance() {
+  public static real.grpc.tracker.RobotList getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
@@ -752,7 +752,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public real.grpc.RobotList getDefaultInstanceForType() {
+  public real.grpc.tracker.RobotList getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

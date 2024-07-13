@@ -1,6 +1,6 @@
 syntax = "proto3";
 option java_multiple_files = true;
-package real.grpc;
+package real.grpc.tracker;
 
 service Tracker {
   rpc GetPosition (Robot) returns (Position) {}

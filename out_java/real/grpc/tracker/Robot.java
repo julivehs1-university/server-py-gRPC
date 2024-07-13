@@ -2,74 +2,52 @@
 // source: Tracker.proto
 
 // Protobuf Java Version: 3.25.1
-package real.grpc;
+package real.grpc.tracker;
 
 /**
- * Protobuf type {@code real.grpc.Position}
+ * Protobuf type {@code real.grpc.tracker.Robot}
  */
-public final class Position extends
+public final class Robot extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:real.grpc.Position)
-    PositionOrBuilder {
+    // @@protoc_insertion_point(message_implements:real.grpc.tracker.Robot)
+    RobotOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use Position.newBuilder() to construct.
-  private Position(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use Robot.newBuilder() to construct.
+  private Robot(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private Position() {
+  private Robot() {
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new Position();
+    return new Robot();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return real.grpc.TrackerOuterClass.internal_static_real_grpc_Position_descriptor;
+    return real.grpc.tracker.TrackerOuterClass.internal_static_real_grpc_tracker_Robot_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return real.grpc.TrackerOuterClass.internal_static_real_grpc_Position_fieldAccessorTable
+    return real.grpc.tracker.TrackerOuterClass.internal_static_real_grpc_tracker_Robot_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            real.grpc.Position.class, real.grpc.Position.Builder.class);
+            real.grpc.tracker.Robot.class, real.grpc.tracker.Robot.Builder.class);
   }
 
-  public static final int X_FIELD_NUMBER = 1;
-  private float x_ = 0F;
+  public static final int ROBOT_ID_FIELD_NUMBER = 1;
+  private int robotId_ = 0;
   /**
-   * <code>float x = 1;</code>
-   * @return The x.
+   * <code>int32 robot_id = 1;</code>
+   * @return The robotId.
    */
   @java.lang.Override
-  public float getX() {
-    return x_;
-  }
-
-  public static final int Y_FIELD_NUMBER = 2;
-  private float y_ = 0F;
-  /**
-   * <code>float y = 2;</code>
-   * @return The y.
-   */
-  @java.lang.Override
-  public float getY() {
-    return y_;
-  }
-
-  public static final int ORIENTATION_FIELD_NUMBER = 3;
-  private float orientation_ = 0F;
-  /**
-   * <code>float orientation = 3;</code>
-   * @return The orientation.
-   */
-  @java.lang.Override
-  public float getOrientation() {
-    return orientation_;
+  public int getRobotId() {
+    return robotId_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -86,14 +64,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (java.lang.Float.floatToRawIntBits(x_) != 0) {
-      output.writeFloat(1, x_);
-    }
-    if (java.lang.Float.floatToRawIntBits(y_) != 0) {
-      output.writeFloat(2, y_);
-    }
-    if (java.lang.Float.floatToRawIntBits(orientation_) != 0) {
-      output.writeFloat(3, orientation_);
+    if (robotId_ != 0) {
+      output.writeInt32(1, robotId_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -104,17 +76,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (java.lang.Float.floatToRawIntBits(x_) != 0) {
+    if (robotId_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeFloatSize(1, x_);
-    }
-    if (java.lang.Float.floatToRawIntBits(y_) != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeFloatSize(2, y_);
-    }
-    if (java.lang.Float.floatToRawIntBits(orientation_) != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeFloatSize(3, orientation_);
+        .computeInt32Size(1, robotId_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -126,20 +90,13 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof real.grpc.Position)) {
+    if (!(obj instanceof real.grpc.tracker.Robot)) {
       return super.equals(obj);
     }
-    real.grpc.Position other = (real.grpc.Position) obj;
+    real.grpc.tracker.Robot other = (real.grpc.tracker.Robot) obj;
 
-    if (java.lang.Float.floatToIntBits(getX())
-        != java.lang.Float.floatToIntBits(
-            other.getX())) return false;
-    if (java.lang.Float.floatToIntBits(getY())
-        != java.lang.Float.floatToIntBits(
-            other.getY())) return false;
-    if (java.lang.Float.floatToIntBits(getOrientation())
-        != java.lang.Float.floatToIntBits(
-            other.getOrientation())) return false;
+    if (getRobotId()
+        != other.getRobotId()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -151,58 +108,51 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + X_FIELD_NUMBER;
-    hash = (53 * hash) + java.lang.Float.floatToIntBits(
-        getX());
-    hash = (37 * hash) + Y_FIELD_NUMBER;
-    hash = (53 * hash) + java.lang.Float.floatToIntBits(
-        getY());
-    hash = (37 * hash) + ORIENTATION_FIELD_NUMBER;
-    hash = (53 * hash) + java.lang.Float.floatToIntBits(
-        getOrientation());
+    hash = (37 * hash) + ROBOT_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getRobotId();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static real.grpc.Position parseFrom(
+  public static real.grpc.tracker.Robot parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static real.grpc.Position parseFrom(
+  public static real.grpc.tracker.Robot parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static real.grpc.Position parseFrom(
+  public static real.grpc.tracker.Robot parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static real.grpc.Position parseFrom(
+  public static real.grpc.tracker.Robot parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static real.grpc.Position parseFrom(byte[] data)
+  public static real.grpc.tracker.Robot parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static real.grpc.Position parseFrom(
+  public static real.grpc.tracker.Robot parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static real.grpc.Position parseFrom(java.io.InputStream input)
+  public static real.grpc.tracker.Robot parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static real.grpc.Position parseFrom(
+  public static real.grpc.tracker.Robot parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -210,26 +160,26 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  public static real.grpc.Position parseDelimitedFrom(java.io.InputStream input)
+  public static real.grpc.tracker.Robot parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static real.grpc.Position parseDelimitedFrom(
+  public static real.grpc.tracker.Robot parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static real.grpc.Position parseFrom(
+  public static real.grpc.tracker.Robot parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static real.grpc.Position parseFrom(
+  public static real.grpc.tracker.Robot parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -242,7 +192,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(real.grpc.Position prototype) {
+  public static Builder newBuilder(real.grpc.tracker.Robot prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -258,26 +208,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code real.grpc.Position}
+   * Protobuf type {@code real.grpc.tracker.Robot}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:real.grpc.Position)
-      real.grpc.PositionOrBuilder {
+      // @@protoc_insertion_point(builder_implements:real.grpc.tracker.Robot)
+      real.grpc.tracker.RobotOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return real.grpc.TrackerOuterClass.internal_static_real_grpc_Position_descriptor;
+      return real.grpc.tracker.TrackerOuterClass.internal_static_real_grpc_tracker_Robot_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return real.grpc.TrackerOuterClass.internal_static_real_grpc_Position_fieldAccessorTable
+      return real.grpc.tracker.TrackerOuterClass.internal_static_real_grpc_tracker_Robot_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              real.grpc.Position.class, real.grpc.Position.Builder.class);
+              real.grpc.tracker.Robot.class, real.grpc.tracker.Robot.Builder.class);
     }
 
-    // Construct using real.grpc.Position.newBuilder()
+    // Construct using real.grpc.tracker.Robot.newBuilder()
     private Builder() {
 
     }
@@ -291,26 +241,24 @@ private static final long serialVersionUID = 0L;
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      x_ = 0F;
-      y_ = 0F;
-      orientation_ = 0F;
+      robotId_ = 0;
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return real.grpc.TrackerOuterClass.internal_static_real_grpc_Position_descriptor;
+      return real.grpc.tracker.TrackerOuterClass.internal_static_real_grpc_tracker_Robot_descriptor;
     }
 
     @java.lang.Override
-    public real.grpc.Position getDefaultInstanceForType() {
-      return real.grpc.Position.getDefaultInstance();
+    public real.grpc.tracker.Robot getDefaultInstanceForType() {
+      return real.grpc.tracker.Robot.getDefaultInstance();
     }
 
     @java.lang.Override
-    public real.grpc.Position build() {
-      real.grpc.Position result = buildPartial();
+    public real.grpc.tracker.Robot build() {
+      real.grpc.tracker.Robot result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -318,23 +266,17 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public real.grpc.Position buildPartial() {
-      real.grpc.Position result = new real.grpc.Position(this);
+    public real.grpc.tracker.Robot buildPartial() {
+      real.grpc.tracker.Robot result = new real.grpc.tracker.Robot(this);
       if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
     }
 
-    private void buildPartial0(real.grpc.Position result) {
+    private void buildPartial0(real.grpc.tracker.Robot result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.x_ = x_;
-      }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.y_ = y_;
-      }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.orientation_ = orientation_;
+        result.robotId_ = robotId_;
       }
     }
 
@@ -372,24 +314,18 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof real.grpc.Position) {
-        return mergeFrom((real.grpc.Position)other);
+      if (other instanceof real.grpc.tracker.Robot) {
+        return mergeFrom((real.grpc.tracker.Robot)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(real.grpc.Position other) {
-      if (other == real.grpc.Position.getDefaultInstance()) return this;
-      if (other.getX() != 0F) {
-        setX(other.getX());
-      }
-      if (other.getY() != 0F) {
-        setY(other.getY());
-      }
-      if (other.getOrientation() != 0F) {
-        setOrientation(other.getOrientation());
+    public Builder mergeFrom(real.grpc.tracker.Robot other) {
+      if (other == real.grpc.tracker.Robot.getDefaultInstance()) return this;
+      if (other.getRobotId() != 0) {
+        setRobotId(other.getRobotId());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -417,21 +353,11 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 13: {
-              x_ = input.readFloat();
+            case 8: {
+              robotId_ = input.readInt32();
               bitField0_ |= 0x00000001;
               break;
-            } // case 13
-            case 21: {
-              y_ = input.readFloat();
-              bitField0_ |= 0x00000002;
-              break;
-            } // case 21
-            case 29: {
-              orientation_ = input.readFloat();
-              bitField0_ |= 0x00000004;
-              break;
-            } // case 29
+            } // case 8
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -449,98 +375,34 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private float x_ ;
+    private int robotId_ ;
     /**
-     * <code>float x = 1;</code>
-     * @return The x.
+     * <code>int32 robot_id = 1;</code>
+     * @return The robotId.
      */
     @java.lang.Override
-    public float getX() {
-      return x_;
+    public int getRobotId() {
+      return robotId_;
     }
     /**
-     * <code>float x = 1;</code>
-     * @param value The x to set.
+     * <code>int32 robot_id = 1;</code>
+     * @param value The robotId to set.
      * @return This builder for chaining.
      */
-    public Builder setX(float value) {
+    public Builder setRobotId(int value) {
 
-      x_ = value;
+      robotId_ = value;
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
     /**
-     * <code>float x = 1;</code>
+     * <code>int32 robot_id = 1;</code>
      * @return This builder for chaining.
      */
-    public Builder clearX() {
+    public Builder clearRobotId() {
       bitField0_ = (bitField0_ & ~0x00000001);
-      x_ = 0F;
-      onChanged();
-      return this;
-    }
-
-    private float y_ ;
-    /**
-     * <code>float y = 2;</code>
-     * @return The y.
-     */
-    @java.lang.Override
-    public float getY() {
-      return y_;
-    }
-    /**
-     * <code>float y = 2;</code>
-     * @param value The y to set.
-     * @return This builder for chaining.
-     */
-    public Builder setY(float value) {
-
-      y_ = value;
-      bitField0_ |= 0x00000002;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>float y = 2;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearY() {
-      bitField0_ = (bitField0_ & ~0x00000002);
-      y_ = 0F;
-      onChanged();
-      return this;
-    }
-
-    private float orientation_ ;
-    /**
-     * <code>float orientation = 3;</code>
-     * @return The orientation.
-     */
-    @java.lang.Override
-    public float getOrientation() {
-      return orientation_;
-    }
-    /**
-     * <code>float orientation = 3;</code>
-     * @param value The orientation to set.
-     * @return This builder for chaining.
-     */
-    public Builder setOrientation(float value) {
-
-      orientation_ = value;
-      bitField0_ |= 0x00000004;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>float orientation = 3;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearOrientation() {
-      bitField0_ = (bitField0_ & ~0x00000004);
-      orientation_ = 0F;
+      robotId_ = 0;
       onChanged();
       return this;
     }
@@ -557,23 +419,23 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:real.grpc.Position)
+    // @@protoc_insertion_point(builder_scope:real.grpc.tracker.Robot)
   }
 
-  // @@protoc_insertion_point(class_scope:real.grpc.Position)
-  private static final real.grpc.Position DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:real.grpc.tracker.Robot)
+  private static final real.grpc.tracker.Robot DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new real.grpc.Position();
+    DEFAULT_INSTANCE = new real.grpc.tracker.Robot();
   }
 
-  public static real.grpc.Position getDefaultInstance() {
+  public static real.grpc.tracker.Robot getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<Position>
-      PARSER = new com.google.protobuf.AbstractParser<Position>() {
+  private static final com.google.protobuf.Parser<Robot>
+      PARSER = new com.google.protobuf.AbstractParser<Robot>() {
     @java.lang.Override
-    public Position parsePartialFrom(
+    public Robot parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -592,17 +454,17 @@ private static final long serialVersionUID = 0L;
     }
   };
 
-  public static com.google.protobuf.Parser<Position> parser() {
+  public static com.google.protobuf.Parser<Robot> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<Position> getParserForType() {
+  public com.google.protobuf.Parser<Robot> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public real.grpc.Position getDefaultInstanceForType() {
+  public real.grpc.tracker.Robot getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

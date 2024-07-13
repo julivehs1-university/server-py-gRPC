@@ -1,4 +1,4 @@
-package real.grpc;
+package real.grpc.tracker;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 
@@ -12,32 +12,32 @@ public final class TrackerGrpc {
 
   private TrackerGrpc() {}
 
-  public static final java.lang.String SERVICE_NAME = "real.grpc.Tracker";
+  public static final java.lang.String SERVICE_NAME = "real.grpc.tracker.Tracker";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<real.grpc.Robot,
-      real.grpc.Position> getGetPositionMethod;
+  private static volatile io.grpc.MethodDescriptor<real.grpc.tracker.Robot,
+      real.grpc.tracker.Position> getGetPositionMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "GetPosition",
-      requestType = real.grpc.Robot.class,
-      responseType = real.grpc.Position.class,
+      requestType = real.grpc.tracker.Robot.class,
+      responseType = real.grpc.tracker.Position.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<real.grpc.Robot,
-      real.grpc.Position> getGetPositionMethod() {
-    io.grpc.MethodDescriptor<real.grpc.Robot, real.grpc.Position> getGetPositionMethod;
+  public static io.grpc.MethodDescriptor<real.grpc.tracker.Robot,
+      real.grpc.tracker.Position> getGetPositionMethod() {
+    io.grpc.MethodDescriptor<real.grpc.tracker.Robot, real.grpc.tracker.Position> getGetPositionMethod;
     if ((getGetPositionMethod = TrackerGrpc.getGetPositionMethod) == null) {
       synchronized (TrackerGrpc.class) {
         if ((getGetPositionMethod = TrackerGrpc.getGetPositionMethod) == null) {
           TrackerGrpc.getGetPositionMethod = getGetPositionMethod =
-              io.grpc.MethodDescriptor.<real.grpc.Robot, real.grpc.Position>newBuilder()
+              io.grpc.MethodDescriptor.<real.grpc.tracker.Robot, real.grpc.tracker.Position>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetPosition"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  real.grpc.Robot.getDefaultInstance()))
+                  real.grpc.tracker.Robot.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  real.grpc.Position.getDefaultInstance()))
+                  real.grpc.tracker.Position.getDefaultInstance()))
               .setSchemaDescriptor(new TrackerMethodDescriptorSupplier("GetPosition"))
               .build();
         }
@@ -46,29 +46,29 @@ public final class TrackerGrpc {
     return getGetPositionMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<real.grpc.Empty,
-      real.grpc.RobotList> getGetAllRobotsMethod;
+  private static volatile io.grpc.MethodDescriptor<real.grpc.tracker.Empty,
+      real.grpc.tracker.RobotList> getGetAllRobotsMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "GetAllRobots",
-      requestType = real.grpc.Empty.class,
-      responseType = real.grpc.RobotList.class,
+      requestType = real.grpc.tracker.Empty.class,
+      responseType = real.grpc.tracker.RobotList.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<real.grpc.Empty,
-      real.grpc.RobotList> getGetAllRobotsMethod() {
-    io.grpc.MethodDescriptor<real.grpc.Empty, real.grpc.RobotList> getGetAllRobotsMethod;
+  public static io.grpc.MethodDescriptor<real.grpc.tracker.Empty,
+      real.grpc.tracker.RobotList> getGetAllRobotsMethod() {
+    io.grpc.MethodDescriptor<real.grpc.tracker.Empty, real.grpc.tracker.RobotList> getGetAllRobotsMethod;
     if ((getGetAllRobotsMethod = TrackerGrpc.getGetAllRobotsMethod) == null) {
       synchronized (TrackerGrpc.class) {
         if ((getGetAllRobotsMethod = TrackerGrpc.getGetAllRobotsMethod) == null) {
           TrackerGrpc.getGetAllRobotsMethod = getGetAllRobotsMethod =
-              io.grpc.MethodDescriptor.<real.grpc.Empty, real.grpc.RobotList>newBuilder()
+              io.grpc.MethodDescriptor.<real.grpc.tracker.Empty, real.grpc.tracker.RobotList>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetAllRobots"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  real.grpc.Empty.getDefaultInstance()))
+                  real.grpc.tracker.Empty.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  real.grpc.RobotList.getDefaultInstance()))
+                  real.grpc.tracker.RobotList.getDefaultInstance()))
               .setSchemaDescriptor(new TrackerMethodDescriptorSupplier("GetAllRobots"))
               .build();
         }
@@ -127,15 +127,15 @@ public final class TrackerGrpc {
 
     /**
      */
-    default void getPosition(real.grpc.Robot request,
-        io.grpc.stub.StreamObserver<real.grpc.Position> responseObserver) {
+    default void getPosition(real.grpc.tracker.Robot request,
+        io.grpc.stub.StreamObserver<real.grpc.tracker.Position> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetPositionMethod(), responseObserver);
     }
 
     /**
      */
-    default void getAllRobots(real.grpc.Empty request,
-        io.grpc.stub.StreamObserver<real.grpc.RobotList> responseObserver) {
+    default void getAllRobots(real.grpc.tracker.Empty request,
+        io.grpc.stub.StreamObserver<real.grpc.tracker.RobotList> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetAllRobotsMethod(), responseObserver);
     }
   }
@@ -169,16 +169,16 @@ public final class TrackerGrpc {
 
     /**
      */
-    public void getPosition(real.grpc.Robot request,
-        io.grpc.stub.StreamObserver<real.grpc.Position> responseObserver) {
+    public void getPosition(real.grpc.tracker.Robot request,
+        io.grpc.stub.StreamObserver<real.grpc.tracker.Position> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetPositionMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void getAllRobots(real.grpc.Empty request,
-        io.grpc.stub.StreamObserver<real.grpc.RobotList> responseObserver) {
+    public void getAllRobots(real.grpc.tracker.Empty request,
+        io.grpc.stub.StreamObserver<real.grpc.tracker.RobotList> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetAllRobotsMethod(), getCallOptions()), request, responseObserver);
     }
@@ -202,14 +202,14 @@ public final class TrackerGrpc {
 
     /**
      */
-    public real.grpc.Position getPosition(real.grpc.Robot request) {
+    public real.grpc.tracker.Position getPosition(real.grpc.tracker.Robot request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetPositionMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public real.grpc.RobotList getAllRobots(real.grpc.Empty request) {
+    public real.grpc.tracker.RobotList getAllRobots(real.grpc.tracker.Empty request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetAllRobotsMethod(), getCallOptions(), request);
     }
@@ -233,16 +233,16 @@ public final class TrackerGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<real.grpc.Position> getPosition(
-        real.grpc.Robot request) {
+    public com.google.common.util.concurrent.ListenableFuture<real.grpc.tracker.Position> getPosition(
+        real.grpc.tracker.Robot request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetPositionMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<real.grpc.RobotList> getAllRobots(
-        real.grpc.Empty request) {
+    public com.google.common.util.concurrent.ListenableFuture<real.grpc.tracker.RobotList> getAllRobots(
+        real.grpc.tracker.Empty request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetAllRobotsMethod(), getCallOptions()), request);
     }
@@ -269,12 +269,12 @@ public final class TrackerGrpc {
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_GET_POSITION:
-          serviceImpl.getPosition((real.grpc.Robot) request,
-              (io.grpc.stub.StreamObserver<real.grpc.Position>) responseObserver);
+          serviceImpl.getPosition((real.grpc.tracker.Robot) request,
+              (io.grpc.stub.StreamObserver<real.grpc.tracker.Position>) responseObserver);
           break;
         case METHODID_GET_ALL_ROBOTS:
-          serviceImpl.getAllRobots((real.grpc.Empty) request,
-              (io.grpc.stub.StreamObserver<real.grpc.RobotList>) responseObserver);
+          serviceImpl.getAllRobots((real.grpc.tracker.Empty) request,
+              (io.grpc.stub.StreamObserver<real.grpc.tracker.RobotList>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -298,15 +298,15 @@ public final class TrackerGrpc {
           getGetPositionMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-              real.grpc.Robot,
-              real.grpc.Position>(
+              real.grpc.tracker.Robot,
+              real.grpc.tracker.Position>(
                 service, METHODID_GET_POSITION)))
         .addMethod(
           getGetAllRobotsMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-              real.grpc.Empty,
-              real.grpc.RobotList>(
+              real.grpc.tracker.Empty,
+              real.grpc.tracker.RobotList>(
                 service, METHODID_GET_ALL_ROBOTS)))
         .build();
   }
@@ -317,7 +317,7 @@ public final class TrackerGrpc {
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
-      return real.grpc.TrackerOuterClass.getDescriptor();
+      return real.grpc.tracker.TrackerOuterClass.getDescriptor();
     }
 
     @java.lang.Override

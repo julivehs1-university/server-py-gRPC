@@ -352,6 +352,8 @@ async def handler(websocket):
                 reply[id]["orientation"] = robot.orientation
                 reply[id]["neighbours"] = {}
                 reply[id]["tasks"] = {}
+                reply[id]["positionX"] = robot.position.x
+                reply[id]["positionY"] = robot.position.y
 
                 for neighbour_id, neighbour in robot.neighbours.items():
                     reply[id]["neighbours"][neighbour_id] = {}
@@ -384,7 +386,7 @@ if __name__ == "__main__":
     #   sudo iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 6000
     # Alternatively, change the port below to 80 and run this Python script as root.
     ##
-    start_server = websockets.serve(ws_handler=handler, host=None, port=6000)
+    start_server = websockets.serve(ws_handler=handler, host=server_tuda, port=6000)
     # start_server = websockets.serve(ws_handler=handler, host="144.32.165.233", port=6000)
 
     loop = asyncio.get_event_loop()

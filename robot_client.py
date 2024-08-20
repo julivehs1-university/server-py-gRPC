@@ -449,7 +449,7 @@ class Tracker(Tracker_pb2_grpc.TrackerServicer):
     def GetPosition(self, request, context):
         print(Fore.GREEN + "[INFO]: Requesting data from tracking server")
         x, y, orientation = loop.run_until_complete(get_server_data(1))
-        return Tracker_pb2.Position(x, y, orientation)
+        return Tracker_pb2.Position(x=x, y=y, orientation=orientation)
 
     def GetAllRobots(self, request, context):
         result = []

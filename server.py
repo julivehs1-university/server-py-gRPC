@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-
+from robots import robots, server_none, server_tuda
 import sys
 import cv2
 import math
@@ -52,7 +52,7 @@ class Robot:
         self.id = tag.id
         self.position = position
         self.orientation = tag.angle
-        self.sensor_range = 0.3 # 30cm sensing radius
+        self.sensor_range = 0.2 # 30cm sensing radius
         self.neighbours = {}
         self.tasks = {}
 
@@ -100,8 +100,8 @@ class Tracker(threading.Thread):
             image = self.camera.get_frame()
             overlay = image.copy()
             
-            aruco_dictionary = cv2.aruco.Dictionary_get(cv2.aruco.DICT_4X4_100)
-            aruco_parameters = cv2.aruco.DetectorParameters_create()
+            aruco_dictionary = cv2.aruco.getPredefinedDictionary(cv2.aruco.DICT_4X4_250) #cv2.aruco.Dictionary_get(cv2.aruco.DICT_4X4_100)
+            aruco_parameters = cv2.aruco.DetectorParameters() #cv2.aruco.DetectorParameters_create()
 
             (raw_tags, tag_ids, rejected) = cv2.aruco.detectMarkers(image, aruco_dictionary, parameters=aruco_parameters)
 
@@ -366,6 +366,7 @@ async def handler(websocket):
                     reply[id]["tasks"][task_id]["range"] = task.range
                     reply[id]["tasks"][task_id]["bearing"] = task.bearing
                     reply[id]["tasks"][task_id]["workers"] = task.workers
+                    
 
             send_reply = True
 
@@ -374,8 +375,7 @@ async def handler(websocket):
             await websocket.send(json.dumps(reply))
 
 
-
-
+# TODO: Handle Ctrl+C signals
 if __name__ == "__main__":
     global tracker
     tracker = Tracker()
@@ -383,10 +383,10 @@ if __name__ == "__main__":
 
     ##
     # Use the following iptables rule to forward port 80 to 6000 for the server to use:
-    #   sudo iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 6000
+    #   sudo iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 6001
     # Alternatively, change the port below to 80 and run this Python script as root.
     ##
-    start_server = websockets.serve(ws_handler=handler, host=server_tuda, port=6000)
+    start_server = websockets.serve(ws_handler=handler, host=server_tuda, port=6001)
     # start_server = websockets.serve(ws_handler=handler, host="144.32.165.233", port=6000)
 
     loop = asyncio.get_event_loop()

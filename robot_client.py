@@ -452,9 +452,11 @@ class Tracker(Tracker_pb2_grpc.TrackerServicer):
         return Tracker_pb2.Position(x, y, orientation)
 
     def GetAllRobots(self, request, context):
-        return Tracker_pb2.RobotList([
-            Tracker_pb2.Robot(robot_id=1)
-        ])
+        result = []
+        for id in robot_ids:
+            result.append(Tracker_pb2.Robot(robot_id=id))
+
+        return Tracker_pb2.RobotList(robots=result)
 
 
 def serve():

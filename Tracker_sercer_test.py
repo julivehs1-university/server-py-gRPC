@@ -7,11 +7,12 @@ from out_python import Tracker_pb2_grpc as Tracker_pb2_grpc
 
 class Tracker(Tracker_pb2_grpc.TrackerServicer):
     def GetPosition(self, request, context):
+        print(request.robot_id)
         return Tracker_pb2.Position(x=42, y=32, orientation=10)
 
     def GetAllRobots(self, request, context):
-        return Tracker_pb2.RobotList([
-            Tracker_pb2.Robot(robot_id=1)
+        return Tracker_pb2.RobotList(robots=[
+            Tracker_pb2.Robot(robot_id=1), Tracker_pb2.Robot(robot_id=1)
         ])
     
 

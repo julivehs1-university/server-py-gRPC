@@ -253,7 +253,6 @@ async def handler(websocket):
             await websocket.send(json.dumps(reply))
 
 
-# TODO: Handle Ctrl+C signals
 if __name__ == "__main__":
     global tracker
     tracker = Tracker()
@@ -264,7 +263,7 @@ if __name__ == "__main__":
     #   sudo iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 6001
     # Alternatively, change the port below to 80 and run this Python script as root.
     ##
-    start_server = websockets.serve(ws_handler=handler, host=server_tuda, port=6001)
+    start_server = websockets.serve(ws_handler=handler, host=server_tuda, port=6001, ping_interval=None)
     # start_server = websockets.serve(ws_handler=handler, host="144.32.165.233", port=6000)
 
     loop = asyncio.get_event_loop()

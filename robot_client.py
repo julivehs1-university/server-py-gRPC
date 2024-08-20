@@ -52,23 +52,7 @@ if len(server_address) == 0:
 SIGNALS_TO_NAMES_DICT = dict((getattr(signal, n), n) \
     for n in dir(signal) if n.startswith('SIG') and '_' not in n)
 
-# https://github.com/aaugustin/websockets/issues/124
-__kill_now = False
 
-
-def __set_kill_now(signum, frame):
-    print('\nReceived signal:', SIGNALS_TO_NAMES_DICT[signum], str(signum))
-    global __kill_now
-    __kill_now = True
-
-
-signal.signal(signal.SIGINT, __set_kill_now)
-signal.signal(signal.SIGTERM, __set_kill_now)
-
-
-def kill_now() -> bool:
-    global __kill_now
-    return __kill_now
 
 # Ctrl+C termination handled
 ##
@@ -288,12 +272,6 @@ async def get_data(robot):
 # This function also performs the obstacle avoidance and teleop algorithm state machines
 async def send_commands(robot):
     try:
-        # Turn off LEDs and motors when killed
-        if kill_now():
-            message = {"set_leds_colour": "off", "set_motor_speeds": {}}
-            message["set_motor_speeds"]["left"] = 0
-            message["set_motor_speeds"]["right"] = 0
-            await robot.connection.send(json.dumps(message))
 
         # Construct command message
         message = {}
@@ -448,7 +426,7 @@ async def handler(websocket):
 class Tracker(Tracker_pb2_grpc.TrackerServicer):
     def GetPosition(self, request, context):
         print(Fore.GREEN + "[INFO]: Requesting data from tracking server")
-        x, y, orientation = loop.run_until_complete(get_server_data(1))
+        x, y, orientation = loop.run_until_complete(get_server_data(request.robot_id))
         return Tracker_pb2.Position(x=x, y=y, orientation=orientation)
 
     def GetAllRobots(self, request, context):
@@ -513,18 +491,3 @@ if __name__ == "__main__":
     serve()
 
     sys.exit(0)
-
-    # Only communicate with robots that were successfully connected to
-    while True:
-
-
-
-        print()
-
-        # TODO: Close websocket connections
-        if kill_now():
-            loop.run_until_complete(stop_robots(robot_ids))  # Kill all robots, even if not visible
-            break
-
-        # Sleep until next control cycle
-        time.sleep(0.1)

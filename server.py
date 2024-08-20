@@ -52,7 +52,7 @@ class Robot:
         self.id = tag.id
         self.position = position
         self.orientation = tag.angle
-        self.sensor_range = 0.2 # 30cm sensing radius
+        self.sensor_range = 0.1 # 30cm sensing radius
         self.neighbours = {}
         self.tasks = {}
 
@@ -63,17 +63,7 @@ class SensorReading:
         self.orientation = orientation
         self.workers = workers
 
-class Task:
-    def __init__(self, id, workers, position, radius, time_limit):
-        self.id = id
-        self.workers = workers
-        self.position = position
-        self.radius = radius
-        self.time_limit = time_limit
-        self.counter = time_limit
-        self.completed = False
-        self.failed = False
-        self.start_time = time.time()
+
 
 class Tracker(threading.Thread):
 
@@ -87,13 +77,10 @@ class Tracker(threading.Thread):
         self.max_x = 0 # In pixels
         self.max_y = 0 # In pixels
         self.centre = Vector2D(0, 0) # In metres
-        self.corner_distance_metres = 2.06 # Euclidean distance between corner tags in metres
+        self.corner_distance_metres = 1.8 # Euclidean distance between corner tags in metres
         self.corner_distance_pixels = 0
         self.scale_factor = 0
         self.robots = {}
-        self.tasks = {}
-        self.task_counter = 0
-        self.score = 0
 
     def run(self):
         while True:        
@@ -213,113 +200,12 @@ class Tracker(threading.Thread):
                         cv2.putText(image, text, position, font, font_scale, black, thickness * 3, cv2.LINE_AA)
                         cv2.putText(image, text, position, font, font_scale, white, thickness, cv2.LINE_AA)
 
-                    # Create any new tasks, if necessary
-                    while len(self.tasks) < 3:
-                        id = self.task_counter
-                        placed = False
-                        while not placed:
-                            overlaps = False
-                            workers = random.randint(1, 5)
-                            radius = math.sqrt(workers) * 0.1
-                            min_x_metres = self.min_x / self.scale_factor
-                            max_x_metres = self.max_x / self.scale_factor
-                            min_y_metres = self.min_y / self.scale_factor
-                            max_y_metres = self.max_y / self.scale_factor
-                            x = random.uniform(min_x_metres + radius, max_x_metres - radius)
-                            y = random.uniform(min_y_metres + radius, max_y_metres - radius)
-                            position = Vector2D(x, y) # In metres
-
-                            for other_task in self.tasks.values():
-                                overlap = radius + other_task.radius
-                                if position.distance_to(other_task.position) < overlap:
-                                    overlaps = True
-                            
-                            if not overlaps:
-                                placed = True
-
-                        time_limit = 20 * workers # 20 seconds per robot
-                        self.tasks[id] = Task(id, workers, position, radius, time_limit)
-                        self.task_counter = self.task_counter + 1
-
-                    # Iterate over tasks
-                    for task_id, task in self.tasks.items():
-
-                        task.robots = []
-
-                        # Check whether robot is within range
-                        for robot_id, robot in self.robots.items():
-                            distance = task.position.distance_to(robot.position)
-
-                            if distance < robot.sensor_range:
-
-                                absolute_bearing = math.degrees(math.atan2(task.position.y - robot.position.y, task.position.x - robot.position.x))
-                                relative_bearing = absolute_bearing - robot.orientation
-                                normalised_bearing = angles.normalize(relative_bearing, -180, 180)
-
-                                robot.tasks[task_id] = SensorReading(distance, normalised_bearing, workers=task.workers)
-
-                            if distance < task.radius:
-                                task.robots.append(robot_id)
-
-                        # print(f"Task {task_id} - workers: {task.workers}, robots: {task.robots}")
-                            
-                        if len(task.robots) >= task.workers:
-                            task.completed = True
-
-                        pixel_radius = int(task.radius * self.scale_factor)
-                        x = int(task.position.x * self.scale_factor)
-                        y = int(task.position.y * self.scale_factor)
-
-                        # Draw task timer
-                        time_now = time.time()
-                        task.elapsed_time = time_now - task.start_time
-                        if task.elapsed_time > 1:
-                            task.start_time = time_now
-                            task.counter = task.counter - 1
-                            if task.counter <= 1:
-                                task.failed = True
-                        cv2.circle(overlay, (x, y), int((pixel_radius / task.time_limit) * task.counter), cyan, -1, lineType=cv2.LINE_AA)
-
-                        colour = red
-
-                        # Draw task boundary
-                        cv2.circle(image, (x, y), pixel_radius, black, 10, lineType=cv2.LINE_AA)
-                        cv2.circle(image, (x, y), pixel_radius, colour, 5, lineType=cv2.LINE_AA)
-
-                        # Draw task ID
-                        text = str(task.workers)
-                        font = cv2.FONT_HERSHEY_SIMPLEX
-                        font_scale = 1.5
-                        thickness = 4
-                        textsize = cv2.getTextSize(text, font, font_scale, thickness)[0]
-                        position = (int(x - textsize[0]/2), int(y + textsize[1]/2))
-                        cv2.putText(image, text, position, font, font_scale, black, thickness * 3, cv2.LINE_AA)
-                        cv2.putText(image, text, position, font, font_scale, colour, thickness, cv2.LINE_AA)
-
-                    # Delete completed tasks
-                    for task_id in list(self.tasks.keys()):
-                        task = self.tasks[task_id]
-                        if task.completed:
-                            self.score = self.score + task.workers
-                            del self.tasks[task_id]
-                        elif task.failed:
-                            del self.tasks[task_id]
-
-
-                    text = f"Score: {self.score}"
-                    font = cv2.FONT_HERSHEY_SIMPLEX
-                    font_scale = 2
-                    thickness = 5
-                    textsize = cv2.getTextSize(text, font, font_scale, thickness)[0]
-                    position = (10, 60)
-                    cv2.putText(image, text, position, font, font_scale, black, thickness * 3, cv2.LINE_AA)
-                    cv2.putText(image, text, position, font, font_scale, green, thickness, cv2.LINE_AA)
 
                     # Transparency for overlaid augments
                     alpha = 0.3
                     image = cv2.addWeighted(overlay, alpha, image, 1 - alpha, 0)
 
-            window_name = 'SwarmHack'
+            window_name = 'Praktikum Verteilte Robotiksysteme Gruppe1'
 
             # screen = screeninfo.get_monitors()[0]
             # width, height = screen.width, screen.height
@@ -351,7 +237,6 @@ async def handler(websocket):
                 reply[id] = {}
                 reply[id]["orientation"] = robot.orientation
                 reply[id]["neighbours"] = {}
-                reply[id]["tasks"] = {}
                 reply[id]["positionX"] = robot.position.x
                 reply[id]["positionY"] = robot.position.y
 
@@ -359,14 +244,7 @@ async def handler(websocket):
                     reply[id]["neighbours"][neighbour_id] = {}
                     reply[id]["neighbours"][neighbour_id]["range"] = neighbour.range
                     reply[id]["neighbours"][neighbour_id]["bearing"] = neighbour.bearing
-                    reply[id]["neighbours"][neighbour_id]["orientation"] = neighbour.orientation
-
-                for task_id, task in robot.tasks.items():
-                    reply[id]["tasks"][task_id] = {}
-                    reply[id]["tasks"][task_id]["range"] = task.range
-                    reply[id]["tasks"][task_id]["bearing"] = task.bearing
-                    reply[id]["tasks"][task_id]["workers"] = task.workers
-                    
+                    reply[id]["neighbours"][neighbour_id]["orientation"] = neighbour.orientation 
 
             send_reply = True
 

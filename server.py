@@ -238,8 +238,8 @@ async def handler(websocket):
                 reply[id] = {}
                 reply[id]["orientation"] = robot.orientation
                 reply[id]["neighbours"] = {}
-                reply[id]["positionX"] = robot.position.x
-                reply[id]["positionY"] = robot.position.y
+                reply[id]["positionX"] = robot.position.x*100
+                reply[id]["positionY"] = robot.position.y*100
 
                 for neighbour_id, neighbour in robot.neighbours.items():
                     reply[id]["neighbours"][neighbour_id] = {}

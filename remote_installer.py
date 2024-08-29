@@ -55,7 +55,7 @@ try:
 
     # Start the file
     print(f"Starting the file {start_file}...")
-    start_cmd = f'cd {project_dir} && python {start_file}'
+    start_cmd = f'cd {project_dir} && python3 {start_file}'
     stdin, stdout, stderr = ssh.exec_command(start_cmd)
 
     # Output the result

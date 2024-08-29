@@ -1,23 +1,29 @@
 import paramiko
 import time
+import argparse
+
+# Argumente für den Befehl
+parser = argparse.ArgumentParser(description='SSH to a remote host, clone a git repo, install packages, and start a file.')
+parser.add_argument('hostname', type=str, help='The hostname or IP address of the remote host')
+args = parser.parse_args()
 
 # Remote host information
-hostname = 'pi5780'
+hostname = args.hostname
 port = 22
 username = 'pi'
 password = 'raspberry'
 
 # Git repository and commands
 git_repo_url = 'https://github.com/julivehs1-university/security-guard-pipuck-client.git'
-project_dir = '/home/pi/lab'  # The directory where you want to clone the repo
-start_file = 'move_control.py'  # The file you want to start
+project_dir = '/home/pi/Lab'
+start_file = 'move_control.py'  
 
 # Establish SSH connection
 ssh = paramiko.SSHClient()
 ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 
 try:
-    print("Connecting to the remote host...")
+    print(f"Connecting to the remote host {hostname}...")
     ssh.connect(hostname, port, username, password)
     print("Connected!")
 
@@ -30,8 +36,13 @@ try:
 
     # Navigate to the project directory and install the requirements
     print("Installing missing packages...")
-    install_cmd = f'cd {project_dir} && pip install -r requirements.txt'
-    stdin, stdout, stderr = ssh.exec_command(install_cmd)
+    pip3_cmd = 'pip3 install --force-reinstall "grpcio-tools==1.44.0"'
+    stdin, stdout, stderr = ssh.exec_command(pip3_cmd)
+    print(stdout.read().decode())
+    print(stderr.read().decode())
+
+    pip3_cmd = 'pip3 install grpcio==1.44.0'
+    stdin, stdout, stderr = ssh.exec_command(pip3_cmd)
     print(stdout.read().decode())
     print(stderr.read().decode())
 

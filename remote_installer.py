@@ -34,13 +34,20 @@ try:
     print(stdout.read().decode())
     print(stderr.read().decode())
 
-    # Navigate to the project directory and install the requirements
     print("Installing missing packages...")
+    pip3_cmd = 'pip3 install grpcio==1.44.0'
+    stdin, stdout, stderr = ssh.exec_command(pip3_cmd)
+    print(stdout.read().decode())
+    print(stderr.read().decode())
+
+    # Navigate to the project directory and install the requirements
+    print("Installing grpcio-tools==1.44.0...")
     pip3_cmd = 'pip3 install --force-reinstall "grpcio-tools==1.44.0"'
     stdin, stdout, stderr = ssh.exec_command(pip3_cmd)
     print(stdout.read().decode())
     print(stderr.read().decode())
 
+    print("Installing grpcio==1.44.0...")
     pip3_cmd = 'pip3 install grpcio==1.44.0'
     stdin, stdout, stderr = ssh.exec_command(pip3_cmd)
     print(stdout.read().decode())

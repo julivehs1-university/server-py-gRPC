@@ -35,7 +35,7 @@ try:
     print(stderr.read().decode())
 
     print("Installing missing packages...")
-    pip3_cmd = 'pip3 install grpcio==1.44.0'
+    pip3_cmd = 'pip3 install --upgrade pip'
     stdin, stdout, stderr = ssh.exec_command(pip3_cmd)
     print(stdout.read().decode())
     print(stderr.read().decode())

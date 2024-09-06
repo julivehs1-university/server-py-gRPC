@@ -1,0 +1,99 @@
+Jetzt 10 least times & max 1000 steps pro roboter
+
+
+Trying config:1, DefaultCellScan, 
+Timout for the one above! Still using old value
+Trying config:2, DefaultCellScan, 
+Timout for the one above! Still using old value
+Trying config:3, DefaultCellScan, 
+Timout for the one above! Still using old value
+Trying config:4, DefaultCellScan, 
+Timout for the one above! Still using old value
+Trying config:5, DefaultCellScan, 
+Timout for the one above! Still using old value
+Trying config:6, DefaultCellScan, 
+Timout for the one above! Still using old value
+Trying config:7, DefaultCellScan, 
+Timout for the one above! Still using old value
+Trying config:8, DefaultCellScan, 
+Timout for the one above! Still using old value
+Trying config:9, DefaultCellScan, 
+Timout for the one above! Still using old value
+Trying config:10, DefaultCellScan, 
+Timout for the one above! Still using old value
+Trying config:11, DefaultCellScan, 
+Timout for the one above! Still using old value
+Trying config:12, DefaultCellScan, 
+Timout for the one above! Still using old value
+Trying config:13, DefaultCellScan, 
+Timout for the one above! Still using old value
+Trying config:14, DefaultCellScan, 
+Timout for the one above! Still using old value
+Trying config:15, DefaultCellScan, 
+Timout for the one above! Still using old value
+Trying config:16, DefaultCellScan, 
+Timout for the one above! Still using old value
+Trying config:17, DefaultCellScan, 
+Timout for the one above! Still using old value
+Trying config:18, DefaultCellScan, 
+Timout for the one above! Still using old value
+Trying config:19, DefaultCellScan, 
+Timout for the one above! Still using old value
+Trying config:20, DefaultCellScan, 
+Timout for the one above! Still using old value
+Trying config:1, RayScanCapabilities_range_1, 
+Trying config:2, RayScanCapabilities_range_1, 
+Trying config:3, RayScanCapabilities_range_1, 
+Timout for the one above! Still using old value
+Trying config:4, RayScanCapabilities_range_1, 
+Timout for the one above! Still using old value
+Trying config:5, RayScanCapabilities_range_1, 
+Timout for the one above! Still using old value
+Trying config:6, RayScanCapabilities_range_1, 
+Timout for the one above! Still using old value
+Trying config:7, RayScanCapabilities_range_1, 
+Timout for the one above! Still using old value
+Trying config:8, RayScanCapabilities_range_1, 
+Timout for the one above! Still using old value
+Trying config:9, RayScanCapabilities_range_1, 
+Trying config:10, RayScanCapabilities_range_1, 
+Trying config:11, RayScanCapabilities_range_1, 
+Trying config:12, RayScanCapabilities_range_1, 
+Timout for the one above! Still using old value
+Trying config:13, RayScanCapabilities_range_1, 
+Trying config:14, RayScanCapabilities_range_1, 
+Timout for the one above! Still using old value
+Trying config:15, RayScanCapabilities_range_1, 
+Timout for the one above! Still using old value
+Trying config:16, RayScanCapabilities_range_1, 
+Trying config:17, RayScanCapabilities_range_1, 
+Trying config:18, RayScanCapabilities_range_1, 
+Trying config:19, RayScanCapabilities_range_1, 
+Timout for the one above! Still using old value
+Trying config:20, RayScanCapabilities_range_1, 
+Timout for the one above! Still using old value
+Trying config:1, RayScanCapabilities_range_4, 
+Trying config:2, RayScanCapabilities_range_4, 
+Timout for the one above! Still using old value
+Trying config:3, RayScanCapabilities_range_4, 
+Trying config:4, RayScanCapabilities_range_4, 
+Timout for the one above! Still using old value
+Trying config:5, RayScanCapabilities_range_4, 
+Trying config:6, RayScanCapabilities_range_4, 
+Trying config:7, RayScanCapabilities_range_4, 
+Trying config:8, RayScanCapabilities_range_4, 
+Trying config:9, RayScanCapabilities_range_4, 
+Trying config:10, RayScanCapabilities_range_4, 
+Timout for the one above! Still using old value
+Trying config:11, RayScanCapabilities_range_4, 
+Trying config:12, RayScanCapabilities_range_4, 
+Trying config:13, RayScanCapabilities_range_4, 
+Trying config:14, RayScanCapabilities_range_4, 
+Trying config:15, RayScanCapabilities_range_4, 
+Trying config:16, RayScanCapabilities_range_4, 
+Trying config:17, RayScanCapabilities_range_4, 
+Trying config:18, RayScanCapabilities_range_4, 
+Trying config:19, RayScanCapabilities_range_4, 
+Timout for the one above! Still using old value
+Trying config:20, RayScanCapabilities_range_4, 
+Timout for the one above! Still using old value
